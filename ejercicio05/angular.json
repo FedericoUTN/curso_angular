@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "ejercicio05"
+  "defaultProject": "ejercicio05",
+  "cli": {
+    "analytics": "dd5b4464-7f51-4ca0-8368-5cf708b575a5"
+  }
 }

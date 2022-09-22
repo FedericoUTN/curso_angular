@@ -1,0 +1,20 @@
+<!-- Aqui esta el HTML de inicio para la plantilla -->
+<div>
+    <h1>Felicitaciones!</h1>
+    <h4>Has conseguido que tu componente se muestre!</h4>
+    <hr />
+    <h5>Como se ve el evento?</h5>
+    
+    <div style="margin-top:30px">
+    Evento: {{Datos.name}}
+     </div>
+    <div>
+    Fecha: {{Datos.date}}
+    </div>
+    <div>
+    Hora: {{Datos.time}}
+    </div>
+    <div>
+    Direccion: <app-event-address [location]="Datos.location"></app-event-address>
+    </div>
+</div>

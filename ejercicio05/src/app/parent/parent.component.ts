@@ -13,5 +13,8 @@ export class ParentComponent implements OnInit {
 
   ngOnInit() {
   }
+  currValue(currValue : number) : void{
+    this.currentCounter = currValue;
+  }
 
 }
