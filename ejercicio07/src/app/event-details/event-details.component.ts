@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventDetailsComponent implements OnInit {
 
+  estiloEjercicio = {
+    clasesDiv : true
+  }
+
   event = {
     name: 'ngConf 2025',
     date: '3/1/2025',

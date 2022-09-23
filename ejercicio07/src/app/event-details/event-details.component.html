@@ -1,4 +1,4 @@
-<div>
+<div [ngClass]="estiloEjercicio">
   <div style="margin-top:30px;">
     Evento:
   </div>
@@ -13,17 +13,17 @@
   </div>
 </div>
 
-<div>
-  <div style="margin-top:30px;">
+<div [ngClass]="estiloEjercicio">
+  <div style="margin-top:30px;" >
     {{ event.name }} 
   </div>
-  <div>
+  <div >
     {{ event.date }}
   </div>
-  <div>
+  <div >
     {{ event.time }}
   </div>
-  <div>
+  <div >
     {{ event.location.address }}, {{ event.location.city }}, {{ event.location.country }}
   </div>
 </div>
