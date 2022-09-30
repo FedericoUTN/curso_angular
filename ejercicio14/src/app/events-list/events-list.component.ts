@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsListComponent implements OnInit {
 
+  color(event : any){
+    if(event.format === 'InPerson')
+    return "green";
+    else if(event.format === 'Online')
+    return "red"
+    else return "#aaa"
+
+  }
+
   events = [
     {
       name: 'Angular Connect',
