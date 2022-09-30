@@ -6,6 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './events-list.component.css' ]
 })
 export class EventsListComponent implements OnInit {
+clasesActuales = {
+  'in-person' : false,
+  'online' : false,
+  'adeterminar' : false
+}
+funClasesActuales(event: any){
+
+ /* this.clasesActuales = {
+  'in-person' : (event.format === 'InPerson'),
+  'online' : (event.format === 'Online'),
+  'adeterminar' : (!event.format)
+}*/
+if(event.format === 'InPerson')
+return 'in-person'
+else if(event.format === 'Online')
+return 'online'
+else
+return 'adeterminar'
+}
 
   events = [
     {
@@ -47,6 +66,7 @@ export class EventsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
