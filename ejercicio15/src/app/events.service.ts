@@ -40,7 +40,7 @@ const events = [
       city: 'New York',
       country: 'USA'
     }
-  },
+  }
 ]
 
 @Injectable({
@@ -52,5 +52,10 @@ export class EventsService {
   constructor() { }
 getEvents(){
   return events;
+}
+getEvent(name: string | null) {
+  if(name)
+  return events.find(event => event.name === name);
+  else return '';
 }
 }

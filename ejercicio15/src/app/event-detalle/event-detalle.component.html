@@ -1,0 +1,8 @@
+<h1>Detalle Evento <div *ngIf="reviewed">(revisado)</div><div *ngIf="!reviewed">(no revisado)</div></h1>
+<p>{{event.name}}</p>
+<p>{{event.date}} </p>      
+<p>{{event.time}}</p>
+<p>{{event.location?.address}}, {{event.location?.city}}, {{event.location?.country}}</p>
+<button (click)="cambiarReviewed()">Revisar/No revisar</button>
+<button (click)="returnToEvents()">Volver a Eventos</button>
+  

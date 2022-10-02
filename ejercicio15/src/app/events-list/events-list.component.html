@@ -8,6 +8,7 @@
         <th>Date</th>      
         <th>Time</th>
         <th>Address</th>
+        <th>Link</th>
       </tr>
     </thead>
     <tbody>
@@ -16,8 +17,16 @@
         <td>{{event.date}} </td>      
         <td>{{event.time}}</td>
         <td>{{event.location.address}}, {{event.location.city}}, {{event.location.country}}</td>
+        <td><button [routerLink]="['detalles', event.name]">Detalle</button></td>
+      </tr>
+      <tr>
+        <td>Invalid Event</td>
+        <td>N/A</td>      
+        <td>N/A</td>
+        <td>N/A</td>
+        <td><button [routerLink]="['detalles', 'alfaomega']">Detalle</button></td>
       </tr>
     </tbody>
   </table>
-
+  
 </div>
