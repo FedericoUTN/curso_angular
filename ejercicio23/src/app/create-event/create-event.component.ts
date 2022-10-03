@@ -43,7 +43,7 @@ export class CreateEventComponent implements OnInit {
     location : this.fb.group({
       address : ['', Validators.required],
       city : ['', Validators.required],
-      country : ['', Validators.required, Validators.maxLength(2), Validators.minLength(2)]
+      country : ['', [Validators.required, Validators.maxLength(2), Validators.minLength(2), Validators.pattern('^[A-Z]*$')]]
 
     })
   })

@@ -4,34 +4,41 @@
       <label for="name">Nombre del evento:</label>
       <input  id="name" type="text" required
       formControlName="name"/>
-     
     </div>
+    <small class="text-danger" *ngIf="eventForm.get('name').invalid">Requiere campo</small>
     <div class="form-group">
       <label for="event-name">Fecha: </label>
       <input id="date" type="text"
       formControlName="date"/>
     </div>
+    <small class="text-danger" *ngIf="eventForm.get('date').invalid">Requiere campo</small>
     <div class="form-group">
       <label for="event-name">Hora: </label>
       <input id="time" type="text"
       formControlName="time"/>
     </div>
+    <small class="text-danger" *ngIf="eventForm.get('time').invalid">Requiere campo</small>
   <div formGroupName="location">
     <div class="form-group">
       <label for="event-name">Dirección: </label>
       <input id="address" type="text"
       formControlName="address"/>
     </div>
+    <small class="text-danger" *ngIf="eventForm.get('location.address').invalid">Requiere campo</small>
     <div class="form-group">
       <label for="event-name">Ciudad: </label>
       <input id="city" type="text"
       formControlName="city"/>
     </div>
+    <small class="text-danger" *ngIf="eventForm.get('location.city').invalid">Requiere campo</small>
     <div class="form-group">
       <label for="event-name">Pais: </label>
       <input id="country" type="text"
       formControlName="country"/>
     </div>
+    <small class="text-danger" *ngIf="eventForm.get('location.country').invalid">Requiere campo</small>
+    <small class="text-danger" *ngIf="eventForm.get('location.country').hasError('pattern')">Requiere DOS MAYUSCULAS</small>
+    <small class="text-danger" *ngIf="eventForm.get('location.country').hasError('minlength')">Requiere DOS letras</small>
   </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!eventForm.valid">Guardar</button>
