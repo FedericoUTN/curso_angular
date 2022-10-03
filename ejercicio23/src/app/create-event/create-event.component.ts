@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from '../event.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {Event, Location} from '../event'
 
 @Component({
   selector: 'app-create-event',
@@ -8,8 +10,9 @@ import { EventService } from '../event.service';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
-
-  constructor(private eventService: EventService, private router: Router) { }
+  evento : Event;
+  constructor(private eventService: EventService, private router: Router,
+    private fb: FormBuilder) { }
 
   ngOnInit() {
   }
@@ -17,4 +20,31 @@ export class CreateEventComponent implements OnInit {
   cancel() {
     this.router.navigate(['/events']);
   }
+  onSubmit(){
+    this.evento = this.eventForm.value;
+    this.eventService.saveEvent(this.evento);
+  }
+  /*eventForm = new FormGroup({
+    nameForm : new FormControl(''),
+    dateForm : new FormControl(''),
+    timeForm : new FormControl(''),
+    locationForm : new FormGroup({
+      addressForm : new FormControl(''),
+      cityForm : new FormControl(''),
+      countryForm : new FormControl('')
+
+    })
+  })*/  //! sin formbuilder
+
+  eventForm = this.fb.group({
+    name : ['', Validators.required],
+    date : ['', Validators.required],
+    time : ['', Validators.required],
+    location : this.fb.group({
+      address : ['', Validators.required],
+      city : ['', Validators.required],
+      country : ['', Validators.required, Validators.maxLength(2), Validators.minLength(2)]
+
+    })
+  })
 }

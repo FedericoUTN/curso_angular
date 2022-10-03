@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Event, Location} from './event'
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class EventService {
 
   constructor() { }
 
-  EVENTS = [
+  EVENTS : Event[]= [
     {
       name: 'Angular Connect',
       date: '9/26/2036',
@@ -50,12 +51,12 @@ export class EventService {
     },
   ];
 
-  saveEvent(event) {
-    event.id = 99;
+  saveEvent(event : Event): void {
+    event.id = 99; 
     this.EVENTS.push(event);
   }
 
-  getEvents() {
+  getEvents(): Event[]{
     return this.EVENTS;
   }
 }
