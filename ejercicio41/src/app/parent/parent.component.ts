@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of, lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-parent',
@@ -8,8 +8,8 @@ import { of } from 'rxjs';
 })
 export class ParentComponent implements OnInit {
 
-  obs;
-  result;
+  obs : Observable<number>;
+  result : number;
   promise;
 
   constructor() { 
@@ -18,10 +18,11 @@ export class ParentComponent implements OnInit {
 
   ngOnInit() {
     // ingrese el código aquí
+    this.promise = lastValueFrom(this.obs);
   }
 
   listen() {
-    this.promise.then((val) => {
+    this.promise.then((val : number) => {
       this.result = val;
     })
   }
