@@ -11,7 +11,7 @@ export class EventService {
   EVENTS : Event[]= [
     {
       name: 'Angular Connect',
-      date: '9/26/2036',
+      date: new Date('9/26/2036'),
       time: '10am',
       location: {
         address: '1 London Rd',
@@ -21,7 +21,7 @@ export class EventService {
     },
     {
       name: 'ng-nl',
-      date: '4/15/2037',
+      date: new Date('4/15/2037'),
       time: '9am',
       location: {
         address: '127 DT ',
@@ -31,7 +31,7 @@ export class EventService {
     },
     {
       name: 'ng-conf 2037',
-      date: '4/15/2037',
+      date: new Date('4/15/2037'),
       time: '9am',
       location: {
         address: 'The Palatial America Hotel',
@@ -41,7 +41,7 @@ export class EventService {
     },
     {
       name: 'UN Angular Summit',
-      date: '6/10/2037',
+      date: new Date('6/10/2037'),
       time: '8am',
       location: {
         address: 'The UN Angular Center',

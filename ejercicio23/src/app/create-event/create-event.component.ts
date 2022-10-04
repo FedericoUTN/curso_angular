@@ -38,7 +38,7 @@ export class CreateEventComponent implements OnInit {
 
   eventForm = this.fb.group({
     name : ['', Validators.required],
-    date : ['', Validators.required],
+    date : ['', [Validators.required, this.validadorFinSemana]],
     time : ['', Validators.required],
     location : this.fb.group({
       address : ['', Validators.required],
@@ -47,4 +47,15 @@ export class CreateEventComponent implements OnInit {
 
     })
   })
+
+  validadorFinSemana(control : FormControl): {[key : string]: any} | null{
+    const fecha = new Date(control.value);
+    if(fecha.getDay() === 6 || fecha.getDay() === 0){
+      console.log('es feriado');
+      return {feriado : 'Es feriado'};
+    }
+    console.log('no es feriado')
+    return null
+  }
+  
 }

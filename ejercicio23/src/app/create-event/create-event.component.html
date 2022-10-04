@@ -18,6 +18,7 @@
       formControlName="time"/>
     </div>
     <small class="text-danger" *ngIf="eventForm.get('time').invalid">Requiere campo</small>
+    <small class="text-danger" *ngIf="eventForm.get('time').errors['feriado']">{{eventForm.get('time').errors.feriado}} aa</small>
   <div formGroupName="location">
     <div class="form-group">
       <label for="event-name">Dirección: </label>

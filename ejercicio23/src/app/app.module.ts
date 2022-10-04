@@ -7,13 +7,15 @@ import { EventsListComponent } from './events-list/events-list.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateEventPlantillaComponent } from './create-event-plantilla/create-event-plantilla.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsListComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    CreateEventPlantillaComponent
   ],
   imports: [
     BrowserModule,

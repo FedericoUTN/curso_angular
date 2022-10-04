@@ -1,0 +1,60 @@
+<div>
+  <form #eventForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre del evento:</label>
+      <input  id="name" type="text" required minlength="4"
+      [(ngModel)]="evento.name"
+      name="name" #name="ngModel"/>
+    </div>
+    <div [hidden]="name.valid || name.pristine">No valido</div>
+    
+    <div class="form-group">
+      <label for="event-name">Fecha: </label>
+      <input id="date" type="text"
+      [(ngModel)]="evento.date" required minlength="2" 
+      name="date" #date="ngModel"/>
+    </div>
+    <div [hidden]="date.valid || date.pristine">No valido</div>
+    
+    <div class="form-group">
+      <label for="event-name">Hora: </label>
+      <input id="time" type="text"
+      [(ngModel)]="evento.time" required minlength="2"
+      name="time" #time="ngModel"/>
+    </div>
+    <div [hidden]="time.valid || time.pristine">No valido</div>
+   
+  <div formGroupName="location">
+    <div class="form-group">
+      <label for="event-name">Dirección: </label>
+      <input id="address" type="text" 
+      [(ngModel)]="evento.location.address" required minlength="2"
+      name="address" #address="ngModel"/>
+    </div>
+    <div [hidden]="address.valid || address.pristine">No valido</div>
+   
+    <div class="form-group">
+      <label for="event-name">Ciudad: </label>
+      <input id="city" type="text"
+      [(ngModel)]="evento.location.city" required minlength="2"
+      name="city" #city="ngModel"/>
+    </div>
+    <div [hidden]="city.valid || city.pristine">No valido</div>
+  
+    <div class="form-group">
+      <label for="event-name">Pais: </label>
+      <input id="country" type="text"
+      [(ngModel)]="evento.location.country" required minlength="2"
+      name="country" #country="ngModel"/>
+    </div>
+    <div [hidden]="country.valid || city.country">No valido</div>
+  </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!eventForm.valid">Guardar</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancelar</button>
+  </form>
+</div>
+
+<div>
+  {{evento | json}}
+</div>
