@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "ejercicio32"
+  "defaultProject": "ejercicio32",
+  "cli": {
+    "analytics": "d288ceff-5dfd-463c-9622-26d9441609bf"
+  }
 }
