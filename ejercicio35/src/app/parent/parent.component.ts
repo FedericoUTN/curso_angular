@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  movies = [
+  movies : Movie[] =[
     { name:  "Star Wars Episode X", rating: "PG" },
     { name:  "Rocky XV", rating: "PG-13" },
     { name:  "Jaws the Revenge", rating: "R" },
@@ -21,10 +21,26 @@ export class ParentComponent implements OnInit {
   }
 
   sortAsc() {
-    // Implementar
+    this.movies = this.movies.sort((a: Movie , b: Movie)=>{
+      if(a.rating > b.rating)
+      return 1
+      else if (a.rating < b.rating)
+      return -1
+      else return 0;
+    })
   }
 
   sortDesc() {
-    // Implementar
+    this.movies = this.movies.sort((a: Movie , b: Movie)=>{
+      if(a.rating > b.rating)
+      return -1
+      else if (a.rating < b.rating)
+      return 1
+      else return 0;
+    })
   }
 }
+interface Movie {
+  name : string,
+  rating : string
+};
