@@ -10,6 +10,7 @@ export class ActorService {
 
   canAddMovieToActor(name: string, movieName: string) {
     // metodo que queremos simular
+
   }
   
 }
